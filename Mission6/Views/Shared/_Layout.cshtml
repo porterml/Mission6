@@ -8,8 +8,15 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
+
+    <nav>
+        <a asp-controller="Blah" asp-action="Index">Home</a>
+        <a asp-controller="Blah" asp-action="Calculate">Grade Calculator</a>
+    </nav>
+
     <div>
         @RenderBody()
     </div>
+
 </body>
 </html>
