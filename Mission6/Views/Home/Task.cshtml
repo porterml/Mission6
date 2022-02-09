@@ -28,7 +28,7 @@
         <label asp-for="CategoryId">Category</label><!--asp-for commands allow connection to my models-->
         <select asp-for="CategoryId">
             <option value="">Select a Category</option>
-            @foreach (Category c in ViewBag.Category) //make loop
+            @foreach (Category c in ViewBag.Categories) //make loop
             {
                 <option value="@c.CategoryId">@c.CategoryName</option>
             }
