@@ -42,14 +42,10 @@ namespace Mission6.Controllers
         [HttpGet] //done
         public IActionResult Task()     //view     Task has the add 
         {
-            var tasks_page = newTaskContext.TaskTable
-                .Include(x => x.Category)
-                //.Where(x => x.Edited == false)
-                .OrderBy(x => x.TaskName)
-                .ToList(); //create a list to send to the view so it can be output on the page
+            ViewBag.Categories = newTaskContext.CategoryTable.ToList();
 
 
-            return View(tasks_page); //pass along so that the tasks can be read in on the page
+            return View(/*tasks_page*/); //pass along so that the tasks can be read in on the page
         }
 
 
@@ -65,7 +61,7 @@ namespace Mission6.Controllers
             }
             else
             {
-                ViewBag.Category = newTaskContext.CategoryTable.ToList();
+                ViewBag.Categories = newTaskContext.CategoryTable.ToList();
 
                 return View(NT);
             }
@@ -80,7 +76,7 @@ namespace Mission6.Controllers
         [HttpGet] //done
         public IActionResult Update(int TaskId)   // This is our QUADRANTS view Page        update 
         {
-            ViewBag.Category = newTaskContext.CategoryTable.ToList();   // the word after viewbag could be anything you choose
+            ViewBag.Categories = newTaskContext.CategoryTable.ToList();   // the word after viewbag could be anything you choose
 
             var delete_task = newTaskContext.TaskTable.Single(x => x.TaskId == TaskId);
 
