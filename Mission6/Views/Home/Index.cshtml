@@ -4,7 +4,7 @@
 }
 
 <!-- Need to use the model on the Quadrant view. Task is the model name-->
-@*@model List<Task>*@ 
+@model List<Mission6.Models.Task> 
 
 <div class="container border-dark table-bordered ">
     <!-- First row with title of the grid-->
@@ -24,30 +24,30 @@
         <div class="col text-center table-bordered">
             <a class="text-center">Quadrant 1</a>  <br />
             <p>
-                @*@foreach (var x in Model) //enables user to see all of the tasks in the database
+                @foreach (var x in Model) //enables user to see all of the tasks in the database
                 {
                     if (@x.Quadrant == 1)
                     {
-                        @x.Task
+                        @x.TaskName
                         <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
                         <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
                     }
-                }*@
+                }
             </p>
         </div>
 
         <div class="col text-center table-bordered">
             <a class="text-center">Quadrant 2</a>  <br />
             <p>
-                @*@foreach (var x in Model) //enables user to see all of the tasks in the database
+                @foreach (var x in Model) //enables user to see all of the tasks in the database
                 {
                     if (@x.Quadrant == 2)
                     {
-                        @x.Task
+                        @x.TaskName
                         <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
                         <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
                     }
-                }*@
+                }
             </p>
         </div>
     </div>
@@ -58,30 +58,30 @@
         <div class="col text-center table-bordered">
             <a class="text-center">Quadrant 3</a>  <br />
             <p>
-                @*@foreach (var x in Model) //enables user to see all of the tasks in the database
+                @foreach (var x in Model) //enables user to see all of the tasks in the database
                 {
                     if (@x.Quadrant == 3)
                     {
-                        @x.Task
+                        @x.TaskName
                         <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
                         <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
                     }
-                }*@
+                }
             </p>
         </div>
 
         <div class="col text-center table-bordered">
             <a class="text-center">Quadrant 4</a>  <br />
             <p>
-                @*@foreach (var x in Model) //enables user to see all of the tasks in the database
+                @foreach (var x in Model) //enables user to see all of the tasks in the database
                 {
-                    if (@x.Quadrant == 1)
+                    if (@x.Quadrant == 4)
                     {
-                        @x.Task
+                        @x.TaskName
                         <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
                         <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
                     }
-                }*@
+                }
             </p>
         </div>
     </div>
