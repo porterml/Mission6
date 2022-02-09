@@ -17,19 +17,20 @@ namespace Mission6.Controllers
 
         }
 
-        public IActionResult Index()
+        public IActionResult Index()   // This is our QUADRANTS view Page        update and delete 
         {
+            //var tasks = TaskContext.Task
+
             return View();
         }
 
-        public IActionResult Task()
+        public IActionResult Task()     // Add and edit
         {
             return View();
         }
+        
 
-        public IActionResult Quadrants()
-        {
-            return View();
-        }
+
+        
     }
 }
