@@ -3,19 +3,18 @@
 }
 <h1>@ViewData["Title"]</h1>
 
+@model Mission6.Models.Task;
+
 <form method="post">
     <fieldset style="border-radius: 10px;">
 
         <div asp-validation-summary="All"></div> <!--Makes it so validation pops up-->
 
-        <label for="task" asp-for="Task">Task</label>
-        <input type="text" id="task" asp-for="Task"><br><br>
+        <label for="task" asp-for="TaskName">Task</label>
+        <input type="text" id="task" asp-for="TaskName"><br><br>
 
-        <label for="date" asp-for="Date">Due Date</label>
-        <input type="number" id="date" asp-for="Date"><br><br>
-
-        <label for="director" asp-for="Director">Director</label>
-        <input type="text" id="director" asp-for="Director"><br><br>
+        <label for="date" asp-for="DueDate">Due Date</label>
+        <input type="number" id="date" asp-for="DueDate"><br><br>
 
         <label for="quadrant" asp-for="Quadrant">Quadrant</label>
         <select id="quadrant" asp-for="Quadrant">
