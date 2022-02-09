@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Mission6.Models;
 using System;
@@ -11,73 +12,113 @@ namespace Mission6.Controllers
 {
     public class HomeController : Controller
     {
+        private TaskContext newTaskContext { get; set; } //done
 
 
-        private TaskContext Task { get; set; }
-
-
-        public HomeController()
+        public HomeController(TaskContext name) //done
         {
-
+            newTaskContext = name;
         }
 
 
 
-
-        public IActionResult Index()   // This is our QUADRANTS view Page        update and delete 
+        // done
+        public IActionResult Index()   // This is our QUADRANTS view Page        get update and delete 
         {
-            //var tasks = TaskContext.Task
+            // to bring in the stuff on the page we want
+            var quad_tasks = newTaskContext.TaskTable
+                .Include(x => x.Category)
+                //.Where(x => x.Edited == false)
+                .OrderBy(x => x.TaskName)
+                .ToList(); //create a list to send to the view so it can be output on the page
 
-            return View();
+
+            return View(quad_tasks);
         }
 
 
-        [HttpGet]
-        public IActionResult Index()   // This is our QUADRANTS view Page        update and delete 
-        {
-            //var tasks = TaskContext.Task
+        // TASK VIEW ===========================================================================================
 
-            return View();
+        [HttpGet] //done
+        public IActionResult Task()     //view     Task has the add 
+        {
+            var tasks_page = newTaskContext.TaskTable
+                .Include(x => x.Category)
+                //.Where(x => x.Edited == false)
+                .OrderBy(x => x.TaskName)
+                .ToList(); //create a list to send to the view so it can be output on the page
+
+
+            return View(tasks_page); //pass along so that the tasks can be read in on the page
         }
 
 
-        [HttpPost]
-        public IActionResult Delete (Task td)   // This is our QUADRANTS view Page        update and delete 
-        {
-            //var tasks = TaskContext.Task
-
-            return View();
-        }
-
-
-        public IActionResult Task()     // Add and edit
-        {
-            return View();
-        }
-
-
-        [HttpGet]
-        public IActionResult Task(Task nt)     // Add 
+        [HttpPost] //done
+        public IActionResult Task(Models.Task NT)     // Add 
         {
             if (ModelState.IsValid)
             {
-                TaskContext.Add(nt);
-                TaskContext.SaveChanges();
+                newTaskContext.Add(NT);
+                newTaskContext.SaveChanges();
+
+                return View();
             }
+            else
+            {
+                ViewBag.Categories = newTaskContext.CategoryTable.ToList();
 
-            return View();
+                return View(NT);
+            }
         }
 
 
 
-        [HttpPost]
-        public IActionResult Task()     // edit
+
+        //EDIT FUNCTIONS BELOW HERE ======================================================================================
+
+
+        [HttpGet] //done
+        public IActionResult Update(int TaskId)   // This is our QUADRANTS view Page        update 
         {
-            return View();
+            ViewBag.Categories = newTaskContext.CategoryTable.ToList();   // the word after viewbag could be anything you choose
+
+            var delete_task = newTaskContext.TaskTable.Single(x => x.TaskId == TaskId);
+
+            return View("Index", delete_task);
+        }
+
+
+        [HttpPost] //Done
+        public IActionResult Update(Models.Task UT)   // This is our QUADRANTS view Page        update 
+        {
+            newTaskContext.Update(UT);
+            newTaskContext.SaveChanges();
+
+            return RedirectToAction("Index");
         }
 
 
 
+
+        // DELETE FUNCTIONS BELOW ===============================================================================================
+
+        [HttpGet] //done
+        public IActionResult Delete(int TaskId)   // This is our QUADRANTS view Page        delete 
+        {
+            var task_item = newTaskContext.TaskTable.Single(x => x.TaskId == TaskId);
+
+            return View(task_item);
+        }
+
+
+        [HttpPost] //done
+        public IActionResult Delete (Models.Task DT)   // This is our QUADRANTS view Page        delete 
+        {
+            newTaskContext.TaskTable.Remove(DT);
+            newTaskContext.SaveChanges();
+
+            return Redirect("Index");
+        }
 
 
     }

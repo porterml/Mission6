@@ -20,7 +20,7 @@ namespace Mission6.Models
         public int Quadrant { get; set; }
 
         public int CategoryId { get; set; } // foreign key relationship to the 'QuadrantCategory' table 
-        // public Category Category { get; set; }
+        public Category Category { get; set; }// porter uncommented this so he could use it in the controller
         public bool Completed { get; set; }
 
     }
