@@ -65,7 +65,7 @@ namespace Mission6.Controllers
             }
             else
             {
-                ViewBag.Categories = newTaskContext.CategoryTable.ToList();
+                ViewBag.Category = newTaskContext.CategoryTable.ToList();
 
                 return View(NT);
             }
@@ -80,7 +80,7 @@ namespace Mission6.Controllers
         [HttpGet] //done
         public IActionResult Update(int TaskId)   // This is our QUADRANTS view Page        update 
         {
-            ViewBag.Categories = newTaskContext.CategoryTable.ToList();   // the word after viewbag could be anything you choose
+            ViewBag.Category = newTaskContext.CategoryTable.ToList();   // the word after viewbag could be anything you choose
 
             var delete_task = newTaskContext.TaskTable.Single(x => x.TaskId == TaskId);
 
