@@ -27,7 +27,7 @@
 
         <label asp-for="CategoryId">Category</label><!--asp-for commands allow connection to my models-->
         <select asp-for="CategoryId">
-            <option value="">Select a Movie Category</option>
+            <option value="">Select a Category</option>
             @foreach (Category c in ViewBag.Category) //make loop
             {
                 <option value="@c.CategoryId">@c.CategoryName</option>
@@ -36,9 +36,13 @@
 
         <label for="edit" asp-for="Completed">Completed</label>
         <select id="edit" asp-for="Completed">
-            <option value="Yes">Yes</option>
-            <option value="No">No</option>
+            <option value="true">Yes</option>
+            <option value="false">No</option>
         </select><br><br>
+
+        <div class="buttonHolder">
+            <input value="Submit" type="submit" id="calculate">
+        </div>
 
     </fieldset>
     </form>
