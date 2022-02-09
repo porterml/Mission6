@@ -1,0 +1,53 @@
+﻿body {
+    background-color: #c8d8e4;
+    font-family: Helvetica, Arial, sans-serif, Courier, monospace
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    font-size: 14pt;
+    text-align: center;
+}
+
+a {
+    text-align: center;
+    color: black;
+    font-size: 12pt;
+    font-weight: bold;
+}
+
+form {
+    display: inline-block;
+}
+
+.form-center {
+    display: flex;
+    justify-content: center;
+}
+
+fieldset {
+    border: solid 2px black;
+    float: left;
+    background-color: blanchedalmond
+}
+
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkslategrey;
+    width: auto;
+}
+
+.buttonHolder {
+    text-align: center;
+}
+
+div.ex1 {
+    width: 500px;
+    margin: auto;
+}
