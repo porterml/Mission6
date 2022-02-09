@@ -1,8 +1,88 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "Quadrants";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<!-- Need to use the model on the Quadrant view. Task is the model name-->
+@*@model List<Task>*@ 
+
+<div class="container border-dark table-bordered ">
+    <!-- First row with title of the grid-->
+    <div class="row table-bordered">
+        <div class="col text-center table-bordered">Stephen Covey's Time Management Matrix</div>
+    </div>
+    <div class="row table-bordered">
+        <div class="col table-bordered"></div>
+        <div class="col text-center table-bordered font-weight-bold">URGENT</div>
+        <div class="col text-center table-bordered font-weight-bold">NOT URGENT</div>
+    </div>
+
+    <!-- Second Row with Important, Quadrant 1, and Quadrant 2-->
+    <div class="row table-bordered">
+        <div class="col text-center table-bordered font-weight-bold">IMPORTANT</div>
+
+        <div class="col text-center table-bordered">
+            <a class="text-center">Quadrant 1</a>  <br />
+            <p>
+                @*@foreach (var x in Model) //enables user to see all of the tasks in the database
+                {
+                    if (@x.Quadrant == 1)
+                    {
+                        @x.Task
+                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                    }
+                }*@
+            </p>
+        </div>
+
+        <div class="col text-center table-bordered">
+            <a class="text-center">Quadrant 2</a>  <br />
+            <p>
+                @*@foreach (var x in Model) //enables user to see all of the tasks in the database
+                {
+                    if (@x.Quadrant == 2)
+                    {
+                        @x.Task
+                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                    }
+                }*@
+            </p>
+        </div>
+    </div>
+
+    <!-- Third row with Not important, Quadrant 3, and Quadrant 4-->
+    <div class="row table-bordered">
+        <div class="col text-center table-bordered font-weight-bold">NOT IMPORTANT</div>
+        <div class="col text-center table-bordered">
+            <a class="text-center">Quadrant 3</a>  <br />
+            <p>
+                @*@foreach (var x in Model) //enables user to see all of the tasks in the database
+                {
+                    if (@x.Quadrant == 3)
+                    {
+                        @x.Task
+                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                    }
+                }*@
+            </p>
+        </div>
+
+        <div class="col text-center table-bordered">
+            <a class="text-center">Quadrant 4</a>  <br />
+            <p>
+                @*@foreach (var x in Model) //enables user to see all of the tasks in the database
+                {
+                    if (@x.Quadrant == 1)
+                    {
+                        @x.Task
+                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
+                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                    }
+                }*@
+            </p>
+        </div>
+    </div>
 </div>
