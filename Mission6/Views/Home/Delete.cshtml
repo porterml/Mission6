@@ -3,12 +3,14 @@
     ViewData["Title"] = "Delete Confirmation";
 
 }
-<h1> Are you sure you would like to delete [TASK] from your tasks?</h1> <!-- Replace [TASK] with at sign .model.TaskName-->
-<form metod="post" asp-action="DeleteTask"> <!-- Action DeleteTask needs to be created in controllers page-->
-    <button type="submit">Delete</button>
-    <a asp-controller="Home" asp-action="Task" class="btn btn-primary">Cancel</a>
 
-    <!--<input type="hidden" asp-for="TaskId" />--> <!-- Hidden input identifies task from task list -->
+@model Mission6.Models.Task  
+<h1> Are you sure you would like to delete @Model.TaskName from your tasks?</h1> <!-- Replace [TASK] with at sign .model.TaskName-->
+<form method="post" asp-action="DeleteTask"> <!-- Action DeleteTask needs to be created in controllers page-->
+    <button type="submit">Delete</button>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
+
+    <input type="hidden" asp-for="TaskId" /> <!-- Hidden input identifies task from task list -->
 </form>
 
 

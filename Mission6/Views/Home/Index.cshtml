@@ -23,17 +23,18 @@
 
         <div class="col text-center table-bordered">
             <a class="text-center">Quadrant 1</a>  <br />
-            <p>
-                @foreach (var x in Model) //enables user to see all of the tasks in the database
-                {
-                    if (@x.Quadrant == 1)
+                <p>
+                    @foreach (var x in Model) //enables user to see all of the tasks in the database
                     {
-                        @x.TaskName
-                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
-                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                        if (@x.Quadrant == 1)
+                        {
+                            @x.TaskName
+
+                            <a asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
+                            <a asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                        }
                     }
-                }
-            </p>
+                </p>
         </div>
 
         <div class="col text-center table-bordered">
