@@ -27,9 +27,5 @@ namespace Mission6.Controllers
             return View();
         }
 
-        public IActionResult Quadrants()
-        {
-            return View();
-        }
     }
 }
