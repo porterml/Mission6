@@ -6,10 +6,10 @@
 <!-- Need to use the model on the Quadrant view. Task is the model name-->
 @model List<Mission6.Models.Task> 
 
-<div class="container border-dark table-bordered ">
+<div class="container border-dark table-bordered " style="border-radius: 10px; border-width: 5px;">
     <!-- First row with title of the grid-->
     <div class="row table-bordered">
-        <div class="col text-center table-bordered">Stephen Covey's Time Management Matrix</div>
+        <div class="col text-center table-bordered" style="font-size: 25px;">Stephen Covey's Time Management Matrix</div>
     </div>
     <div class="row table-bordered">
         <div class="col table-bordered"></div>
@@ -29,8 +29,8 @@
                     if (@x.Quadrant == 1)
                     {
                         @x.TaskName
-                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
-                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
                     }
                 }
             </p>
@@ -44,8 +44,8 @@
                     if (@x.Quadrant == 2)
                     {
                         @x.TaskName
-                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
-                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
                     }
                 }
             </p>
@@ -63,8 +63,8 @@
                     if (@x.Quadrant == 3)
                     {
                         @x.TaskName
-                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
-                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
                     }
                 }
             </p>
@@ -78,8 +78,8 @@
                     if (@x.Quadrant == 4)
                     {
                         @x.TaskName
-                        <a asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
-                        <a asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
                     }
                 }
             </p>
