@@ -6,7 +6,7 @@
 
 @model Mission6.Models.Task  
 <h1> Are you sure you would like to delete @Model.TaskName from your tasks?</h1> <!-- Replace [TASK] with at sign .model.TaskName-->
-<form method="post" asp-action="DeleteTask"> <!-- Action DeleteTask needs to be created in controllers page-->
+<form method="post" asp-action="Delete"> <!-- Action DeleteTask needs to be created in controllers page-->
     <button type="submit">Delete</button>
     <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
 

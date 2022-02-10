@@ -28,7 +28,7 @@ namespace Mission6.Controllers
             // to bring in the stuff on the page we want
             var quad_tasks = newTaskContext.TaskTable
                 .Include(x => x.Category)
-                //.Where(x => x.Edited == false)
+                .Where(x => x.Completed == false)
                 .OrderBy(x => x.TaskName)
                 .ToList(); //create a list to send to the view so it can be output on the page
 
