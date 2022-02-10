@@ -83,7 +83,7 @@ namespace Mission6.Controllers
 
             var delete_task = newTaskContext.TaskTable.Single(x => x.TaskId == TaskId);
 
-            return View("Index", delete_task);
+            return View("Task", delete_task);
         }
 
 
