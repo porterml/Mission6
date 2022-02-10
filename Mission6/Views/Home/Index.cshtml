@@ -1,10 +1,13 @@
 ﻿
+
 @{
     ViewData["Title"] = "Index";
 }
 
 <!-- Need to use the model on the Quadrant view. Task is the model name-->
-@model List<Mission6.Models.Task> 
+
+
+@model List<Mission6.Models.Task>; 
 
 <div class="container border-dark table-bordered " style="border-radius: 10px; border-width: 5px;">
     <!-- First row with title of the grid-->
@@ -23,18 +26,18 @@
 
         <div class="col text-center table-bordered">
             <a class="text-center">Quadrant 1</a>  <br />
-                <p>
-                    @foreach (var x in Model) //enables user to see all of the tasks in the database
+            <p>
+                @foreach (var x in Model) //enables user to see all of the tasks in the database
+                {
+                    if (@x.Quadrant == 1)
                     {
-                        if (@x.Quadrant == 1)
-                        {
-                            @x.TaskName
+                        @x.TaskName
 
-                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Edit" asp-route-taskid="@x.TaskId">Edit</a>
-                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
-                        }
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
                     }
-                </p>
+                }
+            </p>
         </div>
 
         <div class="col text-center table-bordered">
@@ -45,8 +48,8 @@
                     if (@x.Quadrant == 2)
                     {
                         @x.TaskName
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
                     }
                 }
             </p>
@@ -64,8 +67,8 @@
                     if (@x.Quadrant == 3)
                     {
                         @x.TaskName
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
                     }
                 }
             </p>
@@ -79,8 +82,8 @@
                     if (@x.Quadrant == 4)
                     {
                         @x.TaskName
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Edit" asp-route-taskid="">Edit</a>
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="">Delete</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
+                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
                     }
                 }
             </p>
