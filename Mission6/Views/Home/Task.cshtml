@@ -5,44 +5,52 @@
 
 @model Mission6.Models.Task;
 
-<form method="post">
-    <fieldset style="border-radius: 10px;">
+    <div class="container">
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
+                <form method="post">
+                    <fieldset style="border-radius: 10px;">
 
-        <div asp-validation-summary="All"></div> <!--Makes it so validation pops up-->
+                        <div asp-validation-summary="All"></div> <!--Makes it so validation pops up-->
 
-        <label for="task" asp-for="TaskName">Task</label>
-        <input type="text" id="task" asp-for="TaskName"><br><br>
+                        <label for="task" asp-for="TaskName">Task</label>
+                        <input type="text" id="task" asp-for="TaskName"><br><br>
 
-        <label for="date" asp-for="DueDate">Due Date</label>
-        <input type="number" id="date" asp-for="DueDate"><br><br>
+                        <label for="date" asp-for="DueDate">Due Date</label>
+                        <input type="number" id="date" asp-for="DueDate"><br><br>
 
-        <label for="quadrant" asp-for="Quadrant">Quadrant</label>
-        <select id="quadrant" asp-for="Quadrant">
-            <!--Include a dropdown menu for Quadrant-->
-            <option value=1>1 (Important/Urgent)</option>
-            <option value=2>2 (Important/Not Urgent)</option>
-            <option value=3>3 (Not Important/Urgent)</option>
-            <option value=4>4 (Not Important/Not Urgent)</option>
-        </select><br><br>
+                        <label for="quadrant" asp-for="Quadrant">Quadrant</label>
+                        <select id="quadrant" asp-for="Quadrant">
+                            <!--Include a dropdown menu for Quadrant-->
+                            <option value=1>1 (Important/Urgent)</option>
+                            <option value=2>2 (Important/Not Urgent)</option>
+                            <option value=3>3 (Not Important/Urgent)</option>
+                            <option value=4>4 (Not Important/Not Urgent)</option>
+                        </select><br><br>
 
-        <label asp-for="CategoryId">Category</label><!--asp-for commands allow connection to my models-->
-        <select asp-for="CategoryId">
-            <option value="">Select a Category</option>
-            @foreach (Category c in ViewBag.Categories) //make loop
-            {
-                <option value="@c.CategoryId">@c.CategoryName</option>
-            }
-        </select><br /><br />
+                        <label asp-for="CategoryId">Category</label><!--asp-for commands allow connection to my models-->
+                        <select asp-for="CategoryId">
+                            <option value="">Select a Category</option>
+                            @foreach (Category c in ViewBag.Categories) //make loop
+                            {
+                                <option value="@c.CategoryId">@c.CategoryName</option>
+                            }
+                        </select><br /><br />
 
-        <label for="edit" asp-for="Completed">Completed</label>
-        <select id="edit" asp-for="Completed">
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-        </select><br><br>
+                        <label for="edit" asp-for="Completed">Completed</label>
+                        <select id="edit" asp-for="Completed">
+                            <option value="true">Yes</option>
+                            <option value="false">No</option>
+                        </select><br><br>
 
-        <div class="buttonHolder">
-            <input value="Submit" type="submit" id="calculate">
-        </div><br />
+                        <div class="buttonHolder">
+                            <input value="Submit" type="submit" id="calculate">
+                        </div><br />
 
-    </fieldset>
-    </form>
+                    </fieldset>
+                </form>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
