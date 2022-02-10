@@ -14,8 +14,8 @@ namespace Mission6.Models
 
         public string TaskName { get; set; }
 
-        [DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")] 
-        public DateTime DueDate { get; set; }
+        //[DisplayFormat(DataFormatString = "{0:dd MMM yyyy}")] 
+        public string DueDate { get; set; }
 
         public int Quadrant { get; set; }
 

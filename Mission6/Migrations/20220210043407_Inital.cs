@@ -1,9 +1,8 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Mission6.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Inital : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -27,7 +26,7 @@ namespace Mission6.Migrations
                     TaskId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     TaskName = table.Column<string>(nullable: true),
-                    DueDate = table.Column<DateTime>(nullable: false),
+                    DueDate = table.Column<string>(nullable: true),
                     Quadrant = table.Column<int>(nullable: false),
                     CategoryId = table.Column<int>(nullable: false),
                     Completed = table.Column<bool>(nullable: false)
@@ -66,12 +65,12 @@ namespace Mission6.Migrations
             migrationBuilder.InsertData(
                 table: "TaskTable",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "TaskName" },
-                values: new object[] { 1, 1, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "Mow the lawn." });
+                values: new object[] { 1, 1, false, null, 2, "Mow the lawn." });
 
             migrationBuilder.InsertData(
                 table: "TaskTable",
                 columns: new[] { "TaskId", "CategoryId", "Completed", "DueDate", "Quadrant", "TaskName" },
-                values: new object[] { 2, 4, false, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "Go to church." });
+                values: new object[] { 2, 4, false, null, 1, "Go to church." });
 
             migrationBuilder.CreateIndex(
                 name: "IX_TaskTable_CategoryId",
