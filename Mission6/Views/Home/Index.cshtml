@@ -31,10 +31,13 @@
                 {
                     if (@x.Quadrant == 1)
                     {
-                        @x.TaskName
+                        if (@x.Completed == false)
+                        { 
+                            @x.TaskName
 
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
+                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                        }
                     }
                 }
             </p>
@@ -47,9 +50,12 @@
                 {
                     if (@x.Quadrant == 2)
                     {
-                        @x.TaskName
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                        if (@x.Completed == false)
+                        {
+                            @x.TaskName
+                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
+                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                        }
                     }
                 }
             </p>
@@ -66,9 +72,12 @@
                 {
                     if (@x.Quadrant == 3)
                     {
-                        @x.TaskName
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                        if (@x.Completed == false)
+                        {
+                            @x.TaskName
+                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
+                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                        }
                     }
                 }
             </p>
@@ -81,9 +90,12 @@
                 {
                     if (@x.Quadrant == 4)
                     {
-                        @x.TaskName
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
-                        <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                        if (@x.Completed == false)
+                        {
+                            @x.TaskName
+                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Update" asp-route-taskid="@x.TaskId">Edit</a>
+                            <a style="font-size: 12px;" asp-controller="Home" asp-action="Delete" asp-route-taskid="@x.TaskId">Delete</a>
+                        }
                     }
                 }
             </p>
