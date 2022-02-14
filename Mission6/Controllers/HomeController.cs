@@ -54,13 +54,10 @@ namespace Mission6.Controllers
         {
             if (ModelState.IsValid)
             {
-                ViewBag.Categories = newTaskContext.CategoryTable.ToList();
-
-
                 newTaskContext.Add(NT);
                 newTaskContext.SaveChanges();
 
-                return View("Index");
+                return RedirectToAction("Index", NT);
             }
             else
             {
